@@ -1,0 +1,142 @@
+/* General container styling */
+.about-us-container {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  padding: 20px;
+}
+
+/* Heading styling */
+.about-us-container h2 {
+  color: white;
+  background-color: darkgreen;
+  border: 2px solid green;
+  text-align: center;
+  font-size: xx-large;
+  height: auto;
+}
+
+/* What We Do section list styling */
+.what-we-do ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+/* Minister and Secretary message sections */
+.minister-message,
+.secretary-message {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+/* Image containers for minister and secretary */
+.minister-image,
+.secretary-image {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Minister and secretary images */
+.minister-image img,
+.secretary-image img {
+  max-width: 250px;
+  height: 280px;
+  border-radius: 4px;
+  margin-top: 50px;
+}
+
+/* Text containers for minister and secretary */
+.minister-text,
+.secretary-text {
+  flex: 2;
+  padding: 20px;
+}
+
+/* Core team section */
+.core-team {
+  text-align: center;
+}
+
+/* Team members container */
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* Individual team member styling */
+.team-member {
+  margin: 60px;
+  text-align: center;
+}
+
+/* Team member images */
+.team-member img {
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  /* border-radius: 100px; */
+}
+
+
+/* Green color for names in minister and secretary sections */
+.green {
+  color: #008000; /* Green color */
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Green color for names in core team section */
+.team-member p strong {
+  color: #008000; /* Green color */
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Blue color and non-italic for designations in core team section */
+.team-member p i {
+  color: #337ab7; /* Blue color */
+  font-style: normal; /* Remove italic */
+}
+
+/* Blue color and non-italic for designations in minister and secretary sections */
+.minister-text p:not(.green),
+.secretary-text p:not(.green) {
+  color: #337ab7;
+  font-style: normal; /* Remove italic */
+}
+
+/* Gray color for department names in core team section */
+.team-member p {
+  color: #808080; /* Gray color for department text */
+}
+.minister-message .minister-text .text,
+.secretary-message .secretary-text .text {
+  color: black;
+}
+
+.text{
+  text-align:justify;
+}
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .minister-message,
+  .secretary-message {
+    flex-direction: column;
+  }
+
+  .minister-image,
+  .secretary-image,
+  .minister-text,
+  .secretary-text {
+    flex: none;
+    width: 100%;
+  }
+
+  .team-member img {
+    width: 100px;
+  }
+}
