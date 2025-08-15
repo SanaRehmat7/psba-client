@@ -19,7 +19,7 @@ const leadership = [
       "Under the leadership of the Government of Punjab, the PSBA is transforming the way people access daily essentials. By launching and expanding Sahulat Bazaars, we are directly impacting the lives of citizens by offering them relief from inflation and improving their purchasing power. We are dedicated to maintaining a duo of notified prices and quality goods, eliminating undue middlemen, and leveraging technology for smarter governance.",
     role: "Member of the National Assembly of Pakistan",
     image:
-      "https://www.pakpedia.pk/files/Image/jpg/full/9f982707467369a8d7909a12177da63d.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6VL9rG5XSrocO2pKqvdg472FdrZhI-bQCCQ&s",
     delay: 0.1,
   },
   {
@@ -36,7 +36,7 @@ const leadership = [
     name: "Naveed Rafaqat Ahmad, ACA",
     title: "DG",
     description:
-      "It is with great pride and a deep sense of public service that I welcome you to the Punjab Sahulat Bazaars Authority (PSBA)—a bold institutional response to one of our province’s most pressing challenges: equitable access to affordable essentials for every citizen At PSBA, we are not just managing retail spaces—we are redefining the public supply chain. Through an expanding network of Sahulat Bazaars across Punjab, we aim to restore fairness in pricing, uplift underserved communities, and ensure that no household is left vulnerable to profiteering or supply shocks.Our mission is rooted in compassion, efficiency, and innovation. With the visionary leadership of Chief Minister Maryam Nawaz Sharif, we are proud to execute a wide-ranging agenda that includes:Construction of 100 new Sahulat Bazaars across tehsils.Launch of ‘Sahulat on the Go’ mobile retail units.Solarization of bazaars for sustainable operations.Digital monitoring systems to ensure price and quality compliance.And entrepreneurial inclusion for small vendors and women-led businesses.This is not merely a government intervention—it is a people-first transformation. Every subsidy delivered, every price stabilized, every small vendor empowered reflects our collective commitment to inclusive growth and dignity for all.I invite citizens, local governments, civil society, and the private sector to join hands with us as we reimagine public markets—not as transactional spaces, but as centers of fairness, opportunity, and resilience.Let us make PSBA a model for the rest of Pakistan.",
+      "It is with great pride and a deep sense of public service that I welcome you to the Punjab Sahulat Bazaars Authority (PSBA) a bold institutional response to one of our province’s most pressing challenges: equitable access to affordable essentials for every citizen At PSBA, we are not just managing retail spaces we are redefining the public supply chain. Through an expanding network of Sahulat Bazaars across Punjab, we aim to restore fairness in pricing, uplift underserved communities, and ensure that no household is left vulnerable to profiteering or supply shocks.Our mission is rooted in compassion, efficiency, and innovation. With the visionary leadership of Chief Minister Maryam Nawaz Sharif, we are proud to execute a wide-ranging agenda that includes:Construction of 100 new Sahulat Bazaars across tehsils.Launch of ‘Sahulat on the Go’ mobile retail units.Solarization of bazaars for sustainable operations.Digital monitoring systems to ensure price and quality compliance.And entrepreneurial inclusion for small vendors and women-led businesses.This is not merely a government intervention it is a people-first transformation. Every subsidy delivered, every price stabilized, every small vendor empowered reflects our collective commitment to inclusive growth and dignity for all.I invite citizens, local governments, civil society, and the private sector to join hands with us as we reimagine public markets not as transactional spaces, but as centers of fairness, opportunity, and resilience.Let us make PSBA a model for the rest of Pakistan.",
     role: "Director General",
     image: "https://psba.gop.pk/wp-content/uploads/2025/06/Naveed.jpg",
     delay: 0.4,
@@ -177,52 +177,13 @@ const mission = [
 ];
 
 const stats = [
-  { label: "Bazaars", value: "50+" },
-  { label: "Citizens Served", value: "30M+" },
-  { label: "Team Members", value: "100+" },
+  { label: "Bazaars", value: "36" },
+  { label: "Annual visitors ", value: "40 million" },
+  { label: "Stakeholders", value: "20,000" },
 ];
 
-function AnimatedCounter({ value, className }) {
-  // Extract number from value string (e.g., "30M+")
-  const match = value.match(/(\d+)/);
-  const number = match ? parseInt(match[1]) : 0;
-  const suffix = value.replace(/(\d+)/, "");
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    let start = 0;
-    const end = number;
-    if (start === end) return;
-    let duration = 1200;
-    let increment = end / (duration / 16);
-    let current = start;
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= end) {
-        setCount(end);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(current));
-      }
-    }, 16);
-    return () => clearInterval(timer);
-  }, [number]);
-  return (
-    <span
-      className={
-        className +
-        " font-mono font-bold text-green-900 relative z-10 flex items-center justify-center text-[clamp(1rem,2vw,1.5rem)] leading-tight tracking-tight overflow-hidden text-center"
-      }
-      style={{
-        minHeight: "1.5em",
-        whiteSpace: "nowrap",
-        maxWidth: "90%",
-      }}
-    >
-      {count}
-      {count === number ? suffix : ""}
-    </span>
-  );
-}
+
+
 
 export default function WhatWeDo() {
   return (
@@ -302,28 +263,25 @@ export default function WhatWeDo() {
           {/* Decorative accent */}
           <div className="absolute -top-8 -left-8 w-24 h-24 bg-yellow-200 rounded-full opacity-30 z-0 animate-pulse" />
           <div className="absolute top-10 right-0 w-16 h-16 bg-green-200 rounded-full opacity-20 z-0 animate-pulse" />
-          <h2 className="text-3xl font-bold text-green-900 mb-4 relative z-10">
+          <h2 className="text-3xl font-bold text-green-900 mb-4 relative z-10 text-center ">
             Who We Are
           </h2>
-          <p className="text-lg text-green-900 mb-2 relative z-10">
+          <p className="text-lg text-green-900 mb-2 relative z-10 align-middle text-justify">
             The Punjab Sahulat Bazaars Authority (PSBA) is a government-led
-             initiative dedicated to safeguarding consumer welfare by 
-             ensuring the uninterrupted availability of quality essential 
-             commodities at officially notified rates across Punjab. 
-             Through an expanding network of Sahulat Bazaars, we deliver 
-             direct economic relief to citizens, countering inflationary 
-             pressures and promoting equitable access in a transparent,
-            regulated environment.Beyond affordability, PSBA is also a 
-            catalyst for inclusive entrepreneurship—providing 
-            accessible business platforms to low-capital vendors 
-            and uplifting grassroots enterprise.
+            initiative dedicated to safeguarding consumer welfare by ensuring
+            the uninterrupted availability of quality essential commodities at
+            officially notified rates across Punjab. Through an expanding
+            network of Sahulat Bazaars, we deliver direct economic relief to
+            citizens, countering inflationary pressures and promoting equitable
+            access in a transparent, regulated environment. Beyond
+            affordability, PSBA is also a catalyst for inclusive
+            entrepreneurship providing accessible business platforms to low
+            capital vendors and uplifting grassroots enterprise.
           </p>
-          <p className="text-green-800 relative z-10">
-            At PSBA, we don’t just run markets—we empower communities,
-            protect purchasing power, and lay the foundation for a more
-            resilient and inclusive provincial economy.
-
-
+          <p className="text-green-800 relative z-10 text-justify">
+            At PSBA, we don’t just run markets we empower communities, protect
+            purchasing power, and lay the foundation for a more resilient and
+            inclusive provincial economy.
           </p>
         </motion.div>
         <div className="flex-1 flex flex-col gap-4 items-center justify-center">
@@ -346,8 +304,9 @@ export default function WhatWeDo() {
               >
                 {/* Decorative accent */}
                 <div className="absolute -top-4 -right-4 w-12 h-12 bg-green-200 rounded-full opacity-20 z-0" />
-                <AnimatedCounter value={stat.value} className="" />
-                <span className="text-lg font-semibold text-green-800 relative z-10">
+                <span className=" font-semibold text-2xl text-green-900 relative z-10 flex items-center justify-center" > {stat.value}</span>
+                   
+                <span className="text-med font-semibold text-green-800 relative z-10">
                   {stat.label}
                 </span>
               </motion.div>
@@ -403,7 +362,7 @@ export default function WhatWeDo() {
             className="relative backdrop-blur-md bg-white/90 border-2 border-yellow-300 rounded-3xl shadow-2xl p-10 flex flex-col md:flex-row items-center gap-8"
           >
             <motion.div
-              className="w-36 h-36 rounded-full overflow-hidden border-4 border-green-600 shadow-lg mb-4 md:mb-0 flex-shrink-0"
+              className="w-50 h-50  overflow-hidden border-2 border-green-600 shadow-lg mb-4 md:mb-0 flex-shrink-0"
               variants={fadeUp(person.delay + 0.1)}
             >
               <img
@@ -499,7 +458,7 @@ export default function WhatWeDo() {
           join our mission for a better Punjab.
         </motion.p>
         <motion.a
-          href="/contact"
+          href="#contact"
           whileHover={{ scale: 1.08 }}
           className="inline-block bg-green-700 text-white font-bold px-8 py-3 rounded-full shadow-lg hover:bg-green-600 transition text-lg"
         >

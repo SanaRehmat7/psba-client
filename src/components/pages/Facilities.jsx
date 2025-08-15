@@ -123,10 +123,12 @@ const Facilities = () => {
   };
 
   const images = [
-    "https://psba.gop.pk/wp-content/uploads/2025/01/pmbmc-1.jpeg",
-    "https://psba.gop.pk/wp-content/uploads/2025/01/pmbmc-2.jpeg",
-    "https://psba.gop.pk/wp-content/uploads/2025/01/pmbmc-3.jpeg",
-    "https://psba.gop.pk/wp-content/uploads/2025/01/10.jpeg",
+    "https://pmbmc.punjab.gov.pk/system/files/A70P6595.JPG",
+    "https://pmbmc.punjab.gov.pk/system/files/A70P6837.JPG",
+    "https://pmbmc.punjab.gov.pk/system/files/IMG_3112.JPG",
+    "https://pmbmc.punjab.gov.pk/system/files/A70P6618.JPG",
+    "https://pmbmc.punjab.gov.pk/system/files/A70P6940.JPG",
+    "https://pmbmc.punjab.gov.pk/system/files/IMG_3117.JPG",
   ];
 
   const tabs = [
@@ -137,7 +139,7 @@ const Facilities = () => {
   return (
     <div className="bg-green-100 min-h-screen p-6 font-sans text-gray-800">
       {/* Header */}
-      <header className="w-full py-8 px-8 mb-8 bg-gradient-to-r from-green-800 via-green-700 to-green-600 text-white text-center relative overflow-hidden">
+      <header className="w-full mt-10 py-8 px-8 mb-8  bg-gradient-to-r from-green-800 via-green-700 to-green-600 text-white text-center relative overflow-hidden">
         {/* Geometric shapes and yellow sparkles */}
         <div className="absolute top-6 left-10 w-10 h-10 bg-yellow-400 rotate-12 rounded-lg opacity-70 z-0" />
         <div className="absolute top-20 right-24 w-8 h-8 bg-yellow-300 rotate-45 rounded-lg opacity-60 z-0" />
@@ -237,11 +239,11 @@ const Facilities = () => {
           >
             {images.map((src, i) => (
               <SwiperSlide key={i}>
-                <div className="flex justify-center items-center overflow-hidden rounded-lg">
+                <div className="w-full h-66 flex justify-center items-center overflow-hidden rounded-lg">
                   <img
                     src={src}
                     alt={`Slide ${i + 1}`}
-                    className="object-cover w-full h-56 sm:h-64 md:h-72 rounded-lg shadow-lg"
+                    className="w-full h-full object-cover rounded-lg shadow-lg"
                   />
                 </div>
               </SwiperSlide>
