@@ -4,10 +4,10 @@ import CountUp from 'react-countup';
 
 const StatsSection = () => {
   const stats = [
-    { value: 500, label: 'Bazaars', suffix: '+' },
-    { value: 12, label: 'Districts', suffix: '' },
+    { value: 35, label: 'Bazaars', suffix: '+' },
+    { value: 25, label: 'Districts', suffix: '' },
     { value: 2.5, label: 'Daily Customers', suffix: 'M' },
-    { value: 150, label: 'Essential Items', suffix: '+' },
+    { value: 15, label: 'Essential Items', suffix: '+' },
     { value: 30, label: 'Price Reduction', suffix: '%' }
   ];
 

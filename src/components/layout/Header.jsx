@@ -64,7 +64,7 @@ const PSBAHeader = () => {
         path: "/psba-gallery",
       },
       {
-        label: "NOTICESprint()",
+        label: "NOTICES",
         path: "/notices-notifications",
       },
       {

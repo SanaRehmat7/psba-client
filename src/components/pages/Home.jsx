@@ -1,12 +1,14 @@
 // src/pages/Home.jsx
 import Hero from '../home/HeroCarousel';
 import InitiativeCards from '../home/InitiativeCards';
-import PriceDashboard from '../common/PriceDashboard';
 import BazaarLocator from '../home/BazaarLocator';
 import NewsSection from '../home/NewsSection';
 import GallerySlider from '../home/GallerySlider';
 import StatsSection from '../home/StatsSection'
 import BazaarMarquee from "../bazaar/BazaarMarquee"
+import PriceList from '../home/PriceList';
+// import PriceDashboard from "../common/PriceDashboard"
+
 
 const Home = () => {
   return (
@@ -23,7 +25,8 @@ const Home = () => {
               See how PSBA prices compare to market rates for essential commodities
             </p>
           </div>
-          <PriceDashboard />
+          <PriceList />
+          {/* <PriceDashboard /> */}
         </div>
       </section>
       
