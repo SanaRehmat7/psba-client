@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import {
+  FaApple,
+  FaGooglePlay,
   FaPhone,
   FaSearch,
   FaGlobe,
@@ -11,7 +13,7 @@ import {
 } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from "../../assets/images/psbLogo.png"; // Import the logo correctly
-import SearchOverlay from "../common/SearchOverlay"
+import SearchOverlay from "../common/SearchOverlay";
 
 const PSBAHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,7 +31,7 @@ const PSBAHeader = () => {
         path: "/",
       },
       {
-        label: "DISCOVER PSBA",
+        label: "Discover PSBA",
         path: "/about-us",
         dropdown: [
           { name: "About Us", path: "/about-us" },
@@ -41,7 +43,7 @@ const PSBAHeader = () => {
         ],
       },
       {
-        label: "JOURNEY",
+        label: "Journey",
         path: "/journey",
         // dropdown: Array.from({ length: 8 }, (_, i) => ({
         //   name: `Financial Year ${2017 + i}`,
@@ -49,7 +51,7 @@ const PSBAHeader = () => {
         // })),
       },
       {
-        label: "RESOURCE CENTER",
+        label: "Resource Center",
         dropdown: [
           { name: "FAQs", path: "/faqs" },
           { name: "Procurement", path: "/procurement" },
@@ -59,16 +61,16 @@ const PSBAHeader = () => {
           { name: "Helping & RTI", path: "/helping-rti" },
         ],
       },
-       {
-        label: "GALLERY",
+      {
+        label: "Gallery",
         path: "/psba-gallery",
       },
       {
-        label: "NOTICESprint()",
+        label: "Notices",
         path: "/notices-notifications",
       },
       {
-        label: "CONTACT",
+        label: "Contact",
         path: "/contact",
       },
     ],
@@ -170,11 +172,11 @@ const PSBAHeader = () => {
   return (
     <header className="w-full fixed top-0 z-50">
       {/* Top bar */}
-      <div className="bg-green-800 text-white py-2 px-4">
-        <div className="container mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-6">
-            <div className="flex items-center text-sm md:text-base">
-              <FaPhone className="mr-2 text-green-300" />
+      <div className="bg-green-800 text-white py-0.5 px-2">
+        <div className="container mx-auto flex justify-between ">
+          <div className="flex items-center  space-x-6">
+            <div className="flex items-center  text-sm md:text-base">
+              <FaPhone className="mr-2  text-white" />
               <a
                 href="tel:(042) 111-176-262"
                 className="hover:text-green-300 transition-colors"
@@ -185,19 +187,28 @@ const PSBAHeader = () => {
               </a>
             </div>
             <div className="hidden md:flex items-center text-sm md:text-base">
+              <span>
+                {language === "en" ? "Download App" : "ایپ ڈاؤن لوڈ کریں"}
+              </span>
               <a
-                href="/download-app"
+                href="https://play.google.com/store/apps/details?id=com.aqib_ali.model_bazar&hl=en"
+                target="_blank"
+                className="flex items-center  md:text-base hover:text-green-300 transition-colors"
+              >
+                <FaGooglePlay className="ml-4" />
+              </a>
+
+              <a
+                href="https://apps.apple.com/pk/app/sahulat-bazaar/id6632214960"
+                target="_blank"
                 className="flex items-center text-sm md:text-base hover:text-green-300 transition-colors"
               >
-                <FaDownload className="mr-1" />
-                <span>
-                  {language === "en" ? "Download App" : "ایپ ڈاؤن لوڈ کریں"}
-                </span>
+                <FaApple className="ml-4" />
               </a>
             </div>
           </div>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 ">
             <button
               className="flex items-center text-sm md:text-base hover:text-green-300 transition-colors"
               onClick={toggleLanguage}
@@ -212,40 +223,67 @@ const PSBAHeader = () => {
       {/* Main header */}
       <motion.div
         className={`bg-white shadow-md transition-all duration-300 ${
-          isScrolled ? "py-2" : "py-4"
+          isScrolled ? "py-1" : "py-2"
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", stiffness: 100, damping: 20 }}
       >
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center">
+        <div className="container mx-auto ">
+          <div className="flex justify-between px-2 items-center">
             {/* Logo */}
-            <a href="/" className="flex items-center">
+            <a href="/" className="flex items-center space-x-2">
+              {/* Animated Logo Only */}
               <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="flex items-center"
+                className="w-14 h-14 rounded-full bg-white shadow-lg ring-2 ring-green-300 flex items-center justify-center relative overflow-hidden"
+                whileHover={{
+                  scale: 1.12,
+                  rotate: 2,
+                }}
+                transition={{ type: "spring", stiffness: 180, damping: 14 }}
               >
-                {/* Updated logo with circular background */}
-                <div className="bg-yellow-500 rounded-full p-2 mr-2">
-                  <div className="bg-white w-8 h-8 rounded-full flex items-center justify-center">
-                    {/* Use imported logo */}
-                    <img 
-                      src={Logo} 
-                      alt="PSBA Logo" 
-                      className="h-11 w-12 object-contain" 
-                    />
-                  </div>
-                </div>
-                <div>
-                  <h1 className="text-2xl font-bold text-green-800">PSBA</h1>
-                  <p className="text-xs text-green-600">
-                    {language === "en"
-                      ? "Punjab Sahulat Bazaar Authority"
-                      : "پنجاب سہولت بازار اتھارٹی"}
-                  </p>
-                </div>
+                {/* Glow Effect (on hover) */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-green-300 via-transparent to-green-100 opacity-0"
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                />
+
+                {/* Shine line animation */}
+                <motion.div
+                  className="absolute top-0 left-[-75%] w-full h-full bg-white/40 rotate-45"
+                  animate={{ left: ["-75%", "100%"] }}
+                  transition={{
+                    repeat: Infinity,
+                    repeatDelay: 4,
+                    duration: 1.8,
+                    ease: "easeInOut",
+                  }}
+                />
+
+                {/* Optional Hover Ring */}
+                <motion.div
+                  className="absolute w-20 h-20 rounded-full border-2 border-green-300 opacity-0"
+                  whileHover={{ opacity: 1, scale: 1.2 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                />
+
+                <img
+                  src={Logo}
+                  alt="PSBA Logo"
+                  className="h-12 w-12 object-contain z-10 transition-all duration-300 ease-in-out"
+                />
               </motion.div>
+
+              {/* Static Text - No animation */}
+              <div>
+                <h1 className="text-3xl font-bold text-green-800">PSBA</h1>
+                <p className="text-sm text-green-600">
+                  {language === "en"
+                    ? "Punjab Sahulat Bazaars Authority"
+                    : "پنجاب سہولت بازار اتھارٹی"}
+                </p>
+              </div>
             </a>
 
             {/* Desktop Navigation */}
@@ -259,7 +297,7 @@ const PSBAHeader = () => {
                 >
                   <a
                     href={item.path}
-                    className={`px-4 py-2 rounded-lg font-medium flex items-center ${
+                    className={`px-5 py-2 rounded-lg font-semibold text-sm lg:text-base flex items-center transition duration-200 ${
                       window.location.pathname === item.path
                         ? "text-white bg-green-700"
                         : "text-green-800 hover:bg-green-100"
@@ -333,9 +371,9 @@ const PSBAHeader = () => {
           </div>
         </div>
       </motion.div>
-      
-      <SearchOverlay 
-        isSearchOpen={isSearchOpen} 
+
+      <SearchOverlay
+        isSearchOpen={isSearchOpen}
         setIsSearchOpen={setIsSearchOpen}
         language={language}
       />
@@ -404,8 +442,6 @@ const PSBAHeader = () => {
         )}
       </AnimatePresence> */}
 
-
-
       {/* Mobile Navigation */}
       <AnimatePresence>
         {isMenuOpen && (
@@ -422,10 +458,10 @@ const PSBAHeader = () => {
                   {/* Mobile Logo with circular background */}
                   <div className="bg-yellow-500 rounded-full p-2 mr-3">
                     <div className="bg-white w-8 h-8 rounded-full flex items-center justify-center">
-                      <img 
-                        src={Logo} 
-                        alt="PSBA Logo" 
-                        className="h-5 w-5 object-contain" 
+                      <img
+                        src={Logo}
+                        alt="PSBA Logo"
+                        className="h-5 w-5 object-contain"
                       />
                     </div>
                   </div>
@@ -520,10 +556,10 @@ const PSBAHeader = () => {
                     ? "Switch to اردو"
                     : "انگریزی پر تبدیل کریں"}
                 </button>
-                
+
                 {/* Replaced Vendor Login with Download App */}
-                <a 
-                  href="/download-app" 
+                <a
+                  href="/download-app"
                   className="block w-full text-center py-3 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 items-center justify-center"
                 >
                   <FaDownload className="mr-2" />

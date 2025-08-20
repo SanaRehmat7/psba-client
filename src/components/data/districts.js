@@ -72,16 +72,10 @@ const districts = [
     link: "/bhera/"
   },
   {
-    name: "Faisalabad 1",
+    name: "Faisalabad",
     slug: "faisalabad1",
     imageUrl: "https://psba.gop.pk/wp-content/uploads/2025/01/PMBMC-out-stores-13.png",
-    link: "/faisalabad1/"
-  },
-  {
-    name: "Faisalabad 2",
-    slug: "faisalabad2",
-    imageUrl: "https://psba.gop.pk/wp-content/uploads/2025/01/PMBMC-out-stores-36.png",
-    link: "/faisalabad2/"
+    link: "/faisalabad/"
   },
   {
     name: "Taunsa Shareef",

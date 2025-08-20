@@ -283,14 +283,6 @@ const FAQs = () => {
           </div>
         </motion.div>
         
-        <motion.div 
-          className="mt-12 text-center text-gray-500 text-sm"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-        >
-          © {new Date().getFullYear()} Model Bazaars Punjab. All rights reserved.
-        </motion.div>
       </div>
     </div>
   );
